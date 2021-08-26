@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    //Table Name
     protected $table = 'posts';
-    //Primary Key
-    public $primarykey = 'id';
-    //Timestamps
-    public $timestamps = true;
+    public $primaryKey = 'id';
+    public $timestamp = true;
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }
